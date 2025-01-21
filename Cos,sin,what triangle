@@ -1,0 +1,29 @@
+import math
+import sys
+sideA=int(input("please input side A:"))
+sideB=int(input("please input side B:"))
+sideC=int(input("please input side C:"))
+if sideA + sideB + sideC != 180:
+    print("triangles add up to 180, try again")
+    sys.exit()
+elif sideA == sideB == sideC:
+    print("your triangles is equilacteral")
+elif sideA == sideB:
+    print("your triangles is isolceles")
+elif sideA != sideB != sideC:
+    print("your triangle is scalene")
+angleB=int(input("please input the angle opposite to side B:"))
+angleC=int(input("please input the angle opposite to side C:"))
+angleA1 = sideA*math.sin(angleB)/sideB
+angleA = math.degrees(math.asin(angleA1))
+print("angle a =",angleA)
+co=input("would you like to do the cosine rule Y/N?")
+if co == "Y":
+    sideBco=int(input("please input side B:"))
+    sideCco=int(input("please input side C:"))
+    anglAco=int(input("please input angle opposite to side A:"))
+    sideAco1 = sideBco**2 + sideCco**2 - 2 * sideBco * sideCco * math.cos(anglAco)
+    sideAco = math.sqrt(sideAco1)
+    print("your missing side:",sideAco)
+else:
+    print("you stink")
